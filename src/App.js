@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import './styles.css';
-import api from './services/api'
+import api from './services/api';
+import { IMaskInput } from 'react-imask';
 
 function App() {
 
@@ -31,7 +32,7 @@ function App() {
       <h1 className="title">Buscador CEP</h1>
 
       <div className="containerInput">
-        <input type="text" placeholder="Digite seu cep..." value={input} onChange={(e) => setInput(e.target.value)} />
+        <IMaskInput mask="00000-000" type="text" value={input} onChange={(e) => setInput(e.target.value)} placeholder="Digite o seu CEP"/>
 
         <button className="buttonSearch" onClick={handleSearch}>
           <FiSearch size={25} color="#FFF"/>
